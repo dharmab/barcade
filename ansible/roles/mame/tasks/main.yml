@@ -2,3 +2,11 @@
 - name: "Install XFCE"
   apt: name=xfce4 update_cache=yes
   become: yes
+
+- name: "Add MAME repository"
+  apt_repository: repo=ppa:c.falco/mame
+  become: yes
+
+- name: "Install MAME"
+  apt: name=mame update_cache=yes
+  become: yes
