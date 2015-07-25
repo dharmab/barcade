@@ -1,0 +1,4 @@
+---
+- name: "Install XFCE"
+  apt: name=xfce4 update_cache=yes
+  become: yes

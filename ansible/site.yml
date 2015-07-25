@@ -1,0 +1,4 @@
+---
+- hosts: mame
+  roles:
+    - mame
