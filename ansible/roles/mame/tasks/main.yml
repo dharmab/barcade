@@ -10,3 +10,7 @@
 - name: "Install MAME"
   apt: name=mame update_cache=yes
   become: yes
+
+- name: "Create MAME ROM directory"
+  file: name="~/mame/roms" state=directory
+
