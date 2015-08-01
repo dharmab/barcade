@@ -1,0 +1,22 @@
+---
+- name: Add RetroArch repository
+  apt_repository: repo=ppa:libretro/stable
+  become: yes
+
+- name: Enable multiverse repository
+  lineinfile: dest=/etc/apt/sources.list line='{{ item }}'
+  with_items:
+    - "deb http://archive.ubuntu.com/ubuntu trusty multiverse"
+    - "deb http://archive.ubuntu.com/ubuntu trusty-updates multiverse"
+  become: yes
+
+- name: Install RetroArch
+  apt: name={{ item }} update_cache=yes
+  with_items:
+    - retroarch
+    - retroarch-assets
+    - retroarch-joypad-autoconfig
+    - libretro-common-shaders
+    - libretro-common-overlays
+  become: yes
+

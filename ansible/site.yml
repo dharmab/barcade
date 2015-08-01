@@ -1,4 +1,6 @@
 ---
-- hosts: mame
+- hosts: arcade
   roles:
     - mame
+    - retroarch
+
